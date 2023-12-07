@@ -7,22 +7,50 @@
     <!-- Use the latest version of jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <style>
-        /* Add some basic styles */
+        /* Updated styles for a different look */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
         .header {
             text-align: center;
             padding: 20px;
+            background-color: #333;
+            color: #fff;
+        }
+
+        h1, h2 {
+            margin: 0;
+        }
+
+        #photo {
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
         }
 
         table {
-            width: 100%;
-            text-align: left;
+            width: 80%;
+            margin: 20px auto;
             border-collapse: collapse;
-            margin-top: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
         th, td {
-            padding: 12px;
+            padding: 15px;
             border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #333;
+            color: #fff;
+        }
+
+        tbody tr:hover {
+            background-color: #f5f5f5;
         }
     </style>
 </head>
@@ -30,15 +58,15 @@
     <div class="header">
         <h1 id="name">Zhen Zhang</h1>
         <h2 id="id">75973</h2>
-        <img id="photo" src="../static/图片1.png" alt="我的照片" width="200px" />
+        <img id="photo" src="../static/图片1.png" alt="My Photo" width="150px" />
     </div>
     <table id="data-table">
         <thead>
             <tr>
-                <th>Score</th>
                 <th>City</th>
                 <th>Title</th>
-                <th>Review Content</th>
+                <th>Review</th>
+                <th>Score</th>
                 <th>Score Image</th>
                 <!-- Add more column names based on your data -->
             </tr>
@@ -66,4 +94,3 @@
     </script>
 </body>
 </html>
-
