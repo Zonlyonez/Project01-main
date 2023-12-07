@@ -82,10 +82,10 @@
             var tableBody = $('#data-table tbody');
             data.forEach(function(item) {
                 var row = '<tr>';
-                row += '<td>' + item.score + '</td>';
                 row += '<td><a href="/city/' + encodeURIComponent(item.city) + '" target="_blank">' + item.city + '</a></td>';
                 row += '<td>' + item.title + '</td>';
                 row += '<td>' + item.review + '</td>';
+                row += '<td>' + item.score + '</td>';
                 row += '<td><img src="../static/score-' + item.score + '.jpg" alt="Score Image" width="50px"></td>';
                 row += '</tr>';
                 tableBody.append(row);
