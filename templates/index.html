@@ -1,21 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assignment</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Use the latest version of jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <style>
-        /* 添加一些基本的样式 */
+        /* Add some basic styles */
         .header {
             text-align: center;
             padding: 20px;
         }
+
         table {
             width: 100%;
             text-align: left;
             border-collapse: collapse;
+            margin-top: 20px;
         }
+
         th, td {
-            padding: 10px;
+            padding: 12px;
             border-bottom: 1px solid #ddd;
         }
     </style>
@@ -24,39 +30,40 @@
     <div class="header">
         <h1 id="name">Zhen Zhang</h1>
         <h2 id="id">75973</h2>
-        <img id="photo" src="../static/图片1.png" alt="我的照片" width="200px" />
+        <img id="photo" src="../static/图片1.jpg" alt="我的照片" width="200px" />
     </div>
     <table id="data-table">
         <thead>
             <tr>
-                <th>score</th>
-                <th>city</th>
-                <th>title</th>
-                <th>review</th>
-                <th>score image</th>
-                <!-- 添加更多列名，根据你的数据 -->
+                <th>Score</th>
+                <th>City</th>
+                <th>Title</th>
+                <th>Review Content</th>
+                <th>Score Image</th>
+                <!-- Add more column names based on your data -->
             </tr>
         </thead>
         <tbody>
-            <!-- 数据将在这里填充 -->
+            <!-- Data will be populated here -->
         </tbody>
     </table>
 
     <script>
-        // 使用jQuery从你的后端获取数据
+        // Use jQuery to fetch data from your backend
         $.get('/api/mydata', function(data) {
-    var tableBody = $('#data-table tbody');
-    data.forEach(function(item) {
-        var row = '<tr>';
-        row += '<td>' + item.score + '</td>';
-        row += '<td><a href="/city/' + encodeURIComponent(item.city) + '" target="_blank">' + item.city + '</a></td>';
-        row += '<td>' + item.title + '</td>';
-        row += '<td>' + item.review + '</td>';
-        row += '<td><img src="../static/score-' + item.score + '.jpg" alt="score image" width="50px"></td>';
-        row += '</tr>';
-        tableBody.append(row);
-    });
-});
+            var tableBody = $('#data-table tbody');
+            data.forEach(function(item) {
+                var row = '<tr>';
+                row += '<td>' + item.score + '</td>';
+                row += '<td><a href="/city/' + encodeURIComponent(item.city) + '" target="_blank">' + item.city + '</a></td>';
+                row += '<td>' + item.title + '</td>';
+                row += '<td>' + item.review + '</td>';
+                row += '<td><img src="../static/score-' + item.score + '.jpg" alt="Score Image" width="50px"></td>';
+                row += '</tr>';
+                tableBody.append(row);
+            });
+        });
     </script>
 </body>
 </html>
+
