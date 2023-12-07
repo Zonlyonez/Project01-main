@@ -66,4 +66,4 @@ jobs:
         with:
           app-name: 'zhangzhens'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_F161C21E584D4D6EB3DA5E93AC3C8C27 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_2B081613CC0F407EA41AE275CA93FEE0 }}
